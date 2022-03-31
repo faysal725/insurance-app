@@ -1,0 +1,114 @@
+.info-page {
+  .page-title {
+    color: $primary-color-1;
+    font-size: 3rem;
+    text-align: center;
+  }
+  .info-container {
+    background: linear-gradient(to bottom, $secondary-color-1, $white);
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    box-shadow: $box-shadow-1;
+    overflow: hidden;
+
+    .input-title {
+      text-align: center;
+      color: #683e00;
+      position: relative;
+      margin-top: 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        width: 100vw;
+        height: 2px;
+        background: $white;
+        transform: translateX(-50%);
+      }
+    }
+    .mailing-address {
+      position: relative;
+      .checkbox {
+        position: absolute;
+        right: 0;
+        bottom: 22px;
+
+        .MuiTypography-root {
+          font-size: 1.4rem;
+          font-style: italic;
+        }
+      }
+    }
+    .MuiFormControl-root {
+      width: 100%;
+    }
+    &.upload-documents {
+      .upload-container {
+        h3 {
+          font-weight: 400;
+          font-size: 2rem;
+          margin-bottom: 0;
+        }
+        label {
+          display: flex;
+
+          .MuiFormControl-root {
+            flex-grow: 1;
+            .MuiOutlinedInput-root {
+              height: 45px;
+              border-top-right-radius: 0;
+              border-bottom-right-radius: 0;
+            }
+          }
+          .MuiButton-root.upload-btn {
+            height: 45px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            flex-basis: 200px;
+          }
+        }
+      }
+    }
+
+    &.vehicle-info {
+      span {
+        width: 100%;
+        text-align: center;
+        color: gray;
+        margin-top: 3px;
+      }
+    }
+  }
+  .submit-container {
+    text-align: center;
+    padding-bottom: 50px;
+    .MuiFormControlLabel-root {
+      margin: auto;
+      font-style: italic;
+      a {
+        color: tomato;
+        transition: all 0.3s linear;
+        &:hover {
+          color: red;
+          text-decoration: underline;
+        }
+      }
+    }
+    .buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      button {
+        max-width: 200px;
+        flex-grow: 1;
+        height: 40px;
+        overflow: hidden;
+      }
+    }
+  }
+}

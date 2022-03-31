@@ -1,0 +1,31 @@
+{
+  "name": "online-insurance-portal",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/lab": "^5.0.0-alpha.64",
+    "@mui/material": "^5.2.8",
+    "axios": "^0.25.0",
+    "date-fns": "^2.28.0",
+    "formik": "^2.2.9",
+    "next": "^12.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-hot-toast": "^2.2.0",
+    "react-imask": "^6.4.2",
+    "swiper": "^7.4.1",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "eslint": "8.6.0",
+    "eslint-config-next": "12.0.7",
+    "sass": "^1.43.4"
+  }
+}
