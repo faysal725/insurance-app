@@ -308,6 +308,11 @@ a {
       .invoice {
         margin-top: 30px;
 
+        // changed code 
+        width: 100%;
+        // changed code
+
+
         .invoice-row {
           border-top: 1px solid lightgray;
           color: gray;
@@ -316,15 +321,33 @@ a {
           // justify-content: space-between;
           padding: 5px 10px;
 
+          // changed code 
+          td{
+            border-top:1px solid lightgray;
+            padding: 0.5em 0;
+          }
+          // changed code 
+          
           &.net-premium h5 {
             font-weight: bold;
           }
 
           &:last-child {
-            h5 {
-              font-weight: bold;
-              font-size: 2rem;
+            // main code 
+            // h5 {
+            //   font-weight: bold;
+            //   font-size: 2rem;
+            //   color: $secondary-color-3;
+            // main code 
+
+            // changed code 
+            td{
               color: $secondary-color-3;
+            // changed code 
+            
+              h5{
+                font-weight:bold;
+                font-size: 2rem;}
 
               &:last-child {
                 color: $primary-color-2;
@@ -381,6 +404,8 @@ a {
         }
         .invoice {
           margin-top: 5px;
+
+
           .invoice-row {
             text-align: center;
             border: 0;
@@ -405,11 +430,17 @@ a {
       min-width: 480px;
     }
     .modal-body {
-      .invoice .invoice-row {
-        display: flex;
-        gap: 16px;
-        justify-content: space-between;
-      }
+
+      // main code 
+      // .invoice .invoice-row {
+      //   display: flex;
+      //   gap: 16px;
+      //   justify-content: space-between;
+      // }
+      // main code 
+
+
+
       span {
         &:last-of-type {
           position: relative;

@@ -104,7 +104,19 @@ function MotorInsurancePage() {
         }
       );
       if (status === 200) {
-        setCalculateData(data.data);
+
+
+        // changed code
+        let changedValue = []; 
+        data.data.map( everyData => {
+          let fullInfo = {name: everyData.name, value:everyData.value.replace(/\s+/g, "").replace("BDT",""), currency: "BDT" }
+          changedValue.push(fullInfo)
+        })
+        console.log(changedValue)
+        setCalculateData(changedValue);
+        // changed code
+
+        // setCalculateData(data.data);
         setMasterData(data.masterData);
       } else {
         setModalOpen(false);
@@ -350,7 +362,7 @@ function MotorInsurancePage() {
                   <div className="input">
                     <DesktopDatePicker
                       label="Policy Start Date"
-                      inputFormat="MM/dd/yyyy"
+                      inputFormat="dd/MM/yyyy"            //changed the date format to  dd/MM/yyyy
                       value={selectedOptions.policyStartDate}
                       onChange={(newValue) => {
                         handleSelect("policyStartDate", newValue);
@@ -417,8 +429,9 @@ function MotorInsurancePage() {
                   <span>Vehicle Type</span>
                   <span>Private Car</span>
                 </h5>
-                <div className="invoice">
-                  {calculateData.map(({ name, value }) => {
+
+                {/* <div className="invoice">
+                  {calculateData.map(({ name, value, currency }) => {
                     if (value) {
                       return (
                         <div
@@ -435,8 +448,60 @@ function MotorInsurancePage() {
                       );
                     }
                     return null;
+                  })} 
+
+                </div> */}
+
+
+                  {/* changed code  */}
+                  <table className="invoice">
+                  {calculateData.map(({ name, value, currency }) => {
+                    if (value) {
+                      return (
+                        <tr
+                          key={name}
+                          className={
+                            name === "Net Premium"
+                              ? "invoice-row net-premium"
+                              : "invoice-row"
+                          }
+                        >
+                          <td><h5>{name}</h5></td>
+                          <td><h5>{currency}</h5></td>
+                          <td><h5>{value}</h5></td>
+                        </tr>
+                      );
+                    }
+                    return null;
                   })}
-                </div>
+                  </table>
+                {/* changed code  */}
+
+
+                {/* changed code  */}
+                {/* <table>
+                {calculateData.map(({ name, value }) => {
+                    if (value) {
+                      return (
+                        <tr
+                          key={name}
+                          className={
+                            name === "Net Premium"
+                              ? "invoice-row net-premium"
+                              : "invoice-row"
+                          }
+                        >
+                          <td><h5>{name}</h5></td>
+                          <td><h5>{value}</h5></td>
+                        </tr>
+                      );
+                    }
+                    return null;
+                  })}
+                  </table> */}
+                {/* changed code  */}
+
+
               </div>
               <div className="modal-footer">
                 <Button onClick={handleCloseModel} className="back-btn">
